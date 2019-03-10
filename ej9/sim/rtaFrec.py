@@ -34,20 +34,19 @@ def mySistem(n , x,f,a,b):
 
 
 t1 = np.arange(100)
-frec=np.arange(0.0,0.5,0.000001)
+frec=np.arange(0.001,0.5,0.0001)
 rtafrec=arr.array('d')
 
 for i in frec:
     semiSol=mySistem(t1 , mySin,i,1,-0.5)
     semiSol=semiSol[30:99]
-    rtafrec.append(max(semiSol))
-
+    rtafrec.append(20*math.log10(max(semiSol)))
 
 
 l = plt.plot(frec,rtafrec, 'ro')
-plt.xlabel('Time')
-plt.ylabel('Y(nT)')
-plt.title('Respuesta al escalon')
+plt.xlabel('Frecuencia[Hz]')
+plt.ylabel('atenuacion [dB]')
+plt.title('Respuesta en frecuencia')
 plt.semilogx()
 plt.setp(l, markersize=10)
 plt.setp(l, markerfacecolor='C0')
