@@ -1,0 +1,78 @@
+\documentclass[../../guia1.tex]{subfiles}
+\begin{document}
+
+\section*{Ejercicio 1}
+
+
+\subsection*{d)}
+\subsubsection*{Linealidad}
+\[T[\alpha\, x_1(nT) + \beta\, x_2(nT)] = 5nT(\alpha\, x_1(nT) + \beta\, x_2(nT))^2\]
+\[\alpha\, T[x_1(nT)] + \beta\, T[x_2(nT)] = \alpha \,5nT\,x_1^2(nT) + \beta\, 5nT\,x_2^2(nT)\]
+\[\Rightarrow T[\alpha\, x_1(nT) + \beta\, x_2(nT)] \neq \alpha\, T[x_1(nT)] + \beta\, T[x_2(nT)]\]
+\begin{center}
+ $\Rightarrow \text{No es lineal}$
+\end{center}
+\subsubsection*{Invariancia en el tiempo}
+\[x(nT) \xrightarrow{T[\,]} 5nT\,x^2(nT) \xrightarrow{T_k} 5(nT-kT)\,x^2(nT-kT)\]
+\[x(nT) \xrightarrow{T_k} x(nT-kT) \xrightarrow{T[\,]} 5nT\, x^2(nT-kT)\]
+\begin{center}
+ $\Rightarrow \text{No es tiempo invariante}$
+\end{center}
+\subsubsection*{Causalidad}
+\[T[x_1(nT)] = 5n\,x^2_1(nT)\]
+\[T[x_2(nT)] = 5n\,x^2_2(nT)\]
+
+\[x_1(nT)=x_2(nT) \forall n\leq k \Rightarrow T[x_1(nT)]=T[X_2(nT)] \forall n\leq k\]
+\begin{center}
+ $\Rightarrow \text{Es causal}$
+\end{center}
+
+\subsection*{e)}
+\subsubsection*{Linealidad}
+\[T[\alpha\, x_1(nT) + \beta\, x_2(nT)] = 3(\alpha\, x_1(nT+3T) + \beta\, x_2(nT+3T))\]
+\[= \alpha \cdot [3x_1(nT+3T)] + \beta \cdot [3x_2(nT+3T)] = \alpha\, T[x_1(nT)] + \beta \, T[x_2(nT)]\]
+
+\begin{center}
+ $\Rightarrow \text{Es lineal}$
+\end{center}
+\subsubsection*{Invariancia en el tiempo}
+\[x(nT) \xrightarrow{T[\,]} 3\,x(nT+3T)\xrightarrow{T_k} 3\,x(nT-kT+3T)\]
+\[x(nT) \xrightarrow{T_k} x(nT-kT) \xrightarrow{T[\,]} 3\,x(nT-kT+3T)\]
+\begin{center}
+ $\Rightarrow \text{Es tiempo invariante}$
+\end{center}
+\subsubsection*{Causalidad}
+\[T[x_1(nT)] = 3\,x_1(nT+3T)\]
+\[T[x_2(nT)] = 3\,x_2(nT+3T)\]
+
+\[x_1(m)\neq x_2(m) \forall m>k \Rightarrow T[x_1(nT)]\neq T[x_2(nT)] \text{ si } n > k-3 \]
+\begin{center}
+ $\Rightarrow \text{No es causal}$
+\end{center}
+
+\subsection*{i)}
+\subsubsection*{Linealidad}
+\[T[\alpha\, x_1(nT) + \beta\, x_2(nT)] = (\alpha\, x_1(nT+T) + \beta\, x_2(nT+T))\,e^{-nT}\]
+\[= \alpha \cdot [x_1(nT+T)\,e^{-nT}] + \beta \cdot [x_2(nT+T)\,e^{-nT}] = \alpha\, T[x_1(nT)] + \beta \, T[x_2(nT)]\]
+\begin{center}
+ $\Rightarrow \text{Es lineal}$
+\end{center}
+
+\subsubsection*{Invariancia en el tiempo}
+\[x(nT) \xrightarrow{T[\,]} x(nT+T)\,e^{-nT}\xrightarrow{T_k} x(nT-kT+T)\,e^{-(nT-kT)} \]
+\[x(nT) \xrightarrow{T_k} x(nT-kT) \xrightarrow{T[\,]} x(nT-kT+T)\,e^{-nT}\]
+\begin{center}
+ $\Rightarrow \text{No es tiempo invariante}$
+\end{center}
+
+\subsubsection*{Causalidad}
+\[T[x_1(nT)] = x_1(nT+T)\,e^{-nT}\]
+\[T[x_2(nT)] = x_2(nT+T)\,e^{-nT}\]
+
+\[x_1(m)\neq x_2(m) \forall m>k \Rightarrow T[x_1(nT)]\neq T[x_2(nT)] \text{ si } n > k-1 \]
+\begin{center}
+ $\Rightarrow \text{No es causal}$
+\end{center}
+
+
+\end{document}
