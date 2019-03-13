@@ -30,13 +30,13 @@ Para hallar la respuesta impulsiva $h(n)$, se busca $y(n)$ cuando $x(n) = \delta
 \[h(n) = 0.4\cdot 0.4^n\]
 
 \begin{align*}
-y(n) &= R \left[sen(n\omega T)\right]\\
+y(nT) &= R \left[sen(n\omega T)\right]\\
 	 &= \frac{1}{2j} R\left[ e^{jn\omega T}\right]
 	  - \frac{1}{2j} R\left[e^{-jn\omega T}\right]\\
-	 &= \frac{1}{2j} R\left[ x_1(\omega)\right]
-	  - \frac{1}{2j} R\left[ x_1(-\omega)\right]\\
-	 &= \frac{1}{2j} y_1(\omega)
-	  - \frac{1}{2j} y_1(-\omega)
+	 &= \frac{1}{2j} R\left[ x_1(\omega T)\right]
+	  - \frac{1}{2j} R\left[ x_1(-\omega T)\right]\\
+	 &= \frac{1}{2j} y_1(\omega T)
+	  - \frac{1}{2j} y_1(-\omega T)
 \end{align*}
 
 \vspace{.5in}
@@ -47,7 +47,7 @@ y_1(n) &=\sum_{k=0}^{n} x_1(n-k)h(k)\\
 	   &=0.4\cdot e^{jn\omega T}\sum_{k=0}^{n}e^{k(ln(0.4)-j\omega T)}
 \end{align*}
 
-Es una serie geom\'etrica con $q = e^{k(ln(0.4)-j\omega T)}$ y $a_0 = 0.4\cdot e^{jn\omega T}$
+Es una serie geom\'etrica con $q = e^{(ln(0.4)-j\omega T)}$ y $a_0 = 0.4\cdot e^{jn\omega T}$
 
 \begin{align*}
 	y_1(n) &= 0.4\cdot e^{jn\omega T}\cdot \frac{\left({e^{(ln(0.4)-j\omega T)}}\right)^{n+1}-1}{e^{(ln(0.4)-j\omega T)}-1}\\
